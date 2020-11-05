@@ -15,7 +15,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(800,800);
+  createCanvas(windowWidth,windowHeight);
   logo = createSprite(400, 250, 1, 1);
   start = createSprite(400, 450, 1, 1);
   help = createSprite(750, 50, 1, 1);
