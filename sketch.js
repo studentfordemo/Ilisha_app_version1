@@ -5,7 +5,7 @@ var ok, okImage;
 var inputBox;
 var go, goImage;
 var string, string1, string2;
-var touches=[]
+
 function preload(){
    startimage = loadImage("StartButton.png");
    logoimage = loadImage("BookLogo.png");
@@ -33,9 +33,9 @@ function draw() {
     text("Book Donation", 300, 100);
     logo.addImage(logoimage);
     start.addImage(startimage);
-    if (mousePressedOver(start)||touches>0){
+    if (mousePressedOver(start)||touches.length > 0 ){
       gameState = "screen1";
-      touches=[]
+      touches = [];
     }
   }
   if (gameState === "screen1"){
