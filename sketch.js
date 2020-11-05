@@ -56,26 +56,31 @@ function draw() {
     string1 = string.toLowerCase();
     string2 = string.toUpperCase();
     
-    if (mousePressedOver(go) && (inputBox.value()==="Mumbai" || string1 === "mumbai" || string2 === "MUMBAI")){
+    if ((mousePressedOver(go) ||touches.length > 0) && (inputBox.value()==="Mumbai" || string1 === "mumbai" || string2 === "MUMBAI")){
       gameState = "MumbaiDetails";
+      touches = [];
     }
 
-    if (mousePressedOver(go) && (inputBox.value()==="Hyderabad" || string1 === "hyderabad" || string2 === "HYDERABAD")){
+    if ((mousePressedOver(go) ||touches.length > 0)  && (inputBox.value()==="Hyderabad" || string1 === "hyderabad" || string2 === "HYDERABAD")){
       gameState = "HyderabadDetails";
+      touches = [];
     }
 
-    if (mousePressedOver(go) && (inputBox.value()==="Bangalore" || string1 === "bangalore" || string2 === "BANGALORE")){
+    if ((mousePressedOver(go) ||touches.length > 0) && (inputBox.value()==="Bangalore" || string1 === "bangalore" || string2 === "BANGALORE")){
       gameState = "BangaloreDetails";
+      touches = [];
     }
 
-    if (mousePressedOver(go) && (inputBox.value()==="Delhi" || string1 === "delhi" || string2 === "DELHI")){
+    if ((mousePressedOver(go) ||touches.length > 0) && (inputBox.value()==="Delhi" || string1 === "delhi" || string2 === "DELHI")){
       gameState = "DelhiDetails";
+      touches = [];
     }
 
     text("Please Enter Your Location:", 340, 300);
-    if (mousePressedOver(help)){
+    if (mousePressedOver(help) ||touches.length > 0){
       background("#3594C8");
       gameState = "helpScreen";
+      touches = [];
     }
   }
   if (gameState === "helpScreen"){
@@ -92,8 +97,9 @@ function draw() {
     text("in your area and donate some books to the children there.", 150, 300);
     ok.addImage(okImage);
     ok.scale = 0.3;
-    if (mousePressedOver(ok)){
+    if (mousePressedOver(ok)||touches.length > 0){
       gameState = "screen1";
+      touches = [];
     }
   }
 
